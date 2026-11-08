@@ -12,5 +12,5 @@ end
 always @(posedge clk) begin
     if (memwrite) mem[address[9:2]] <= write_data;
 end
-assign read_data = mem[address[9:2]];
+assign read_data = memread ? mem[address[9:2]] : 32'b0;
 endmodule
