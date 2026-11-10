@@ -1,4 +1,4 @@
-module hazard_processor_top(
+module hazard_processor_top #(parameter PROGRAM_FILE = "programs/mixed_dependencies.hex")(
     input clk, input reset,
     output [31:0] debug_pc,
     output [31:0] cycles, output [31:0] retired_instructions,
@@ -9,7 +9,7 @@ wire [31:0] instruction;
 wire [31:0] ifid_pc, ifid_instr;
 wire stall;
 
-instruction_memory imem(.address(pc), .instruction(instruction));
+instruction_memory #(.PROGRAM_FILE(PROGRAM_FILE)) imem(.address(pc), .instruction(instruction));
 if_id_register ifid(.clk(clk), .reset(reset), .enable(!stall),
     .pc_in(pc), .instr_in(instruction), .pc_out(ifid_pc), .instr_out(ifid_instr));
 
