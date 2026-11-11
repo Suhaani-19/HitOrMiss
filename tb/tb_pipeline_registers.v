@@ -20,6 +20,8 @@ ex_mem_register exmem(.clk(clk),.reset(reset),.regwrite_in(regwrite_in),.memread
 mem_wb_register memwb(.clk(clk),.reset(reset),.regwrite_in(regwrite_in),.memtoreg_in(memtoreg_in),.alu_result_in(alu_result_in),.mem_data_in(mem_data_in),.rd_in(rd_in),.regwrite_out(memwb_regwrite_out),.memtoreg_out(memwb_memtoreg_out),.alu_result_out(memwb_alu_result_out),.mem_data_out(memwb_mem_data_out),.rd_out(memwb_rd_out));
 always #5 clk=~clk;
 initial begin
+$dumpfile("results/waveforms/tb_pipeline_registers.vcd");
+$dumpvars(0, tb_pipeline_registers);
 clk=0;reset=1;ifid_enable=1;idex_flush=0;regwrite_in=1;memread_in=1;memwrite_in=0;memtoreg_in=1;alusrc_in=1;alucontrol_in=0;pc_in=32'h100;instr_in=32'h12345678;regdata1_in=11;regdata2_in=22;imm_in=33;rs1_in=1;rs2_in=2;rd_in=3;alu_result_in=44;write_data_in=55;mem_data_in=66;
 @(posedge clk);#1;
 if(ifid_pc_out!==0||ifid_instr_out!==0||idex_regwrite_out!==0||exmem_regwrite_out!==0||memwb_regwrite_out!==0)$fatal(1,"Reset failed");

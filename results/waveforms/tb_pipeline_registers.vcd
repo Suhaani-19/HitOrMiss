@@ -1,0 +1,346 @@
+$date
+	Wed Nov 11 21:43:19 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_pipeline_registers $end
+$var wire 1 ! memwb_regwrite_out $end
+$var wire 5 " memwb_rd_out [4:0] $end
+$var wire 1 # memwb_memtoreg_out $end
+$var wire 32 $ memwb_mem_data_out [31:0] $end
+$var wire 32 % memwb_alu_result_out [31:0] $end
+$var wire 32 & ifid_pc_out [31:0] $end
+$var wire 32 ' ifid_instr_out [31:0] $end
+$var wire 5 ( idex_rs2_out [4:0] $end
+$var wire 5 ) idex_rs1_out [4:0] $end
+$var wire 1 * idex_regwrite_out $end
+$var wire 32 + idex_regdata2_out [31:0] $end
+$var wire 32 , idex_regdata1_out [31:0] $end
+$var wire 5 - idex_rd_out [4:0] $end
+$var wire 32 . idex_pc_out [31:0] $end
+$var wire 1 / idex_memwrite_out $end
+$var wire 1 0 idex_memtoreg_out $end
+$var wire 1 1 idex_memread_out $end
+$var wire 32 2 idex_imm_out [31:0] $end
+$var wire 1 3 idex_alusrc_out $end
+$var wire 4 4 idex_alucontrol_out [3:0] $end
+$var wire 32 5 exmem_write_data_out [31:0] $end
+$var wire 1 6 exmem_regwrite_out $end
+$var wire 5 7 exmem_rd_out [4:0] $end
+$var wire 1 8 exmem_memwrite_out $end
+$var wire 1 9 exmem_memtoreg_out $end
+$var wire 1 : exmem_memread_out $end
+$var wire 32 ; exmem_alu_result_out [31:0] $end
+$var reg 32 < alu_result_in [31:0] $end
+$var reg 4 = alucontrol_in [3:0] $end
+$var reg 1 > alusrc_in $end
+$var reg 1 ? clk $end
+$var reg 1 @ idex_flush $end
+$var reg 1 A ifid_enable $end
+$var reg 32 B imm_in [31:0] $end
+$var reg 32 C instr_in [31:0] $end
+$var reg 32 D mem_data_in [31:0] $end
+$var reg 1 E memread_in $end
+$var reg 1 F memtoreg_in $end
+$var reg 1 G memwrite_in $end
+$var reg 32 H pc_in [31:0] $end
+$var reg 5 I rd_in [4:0] $end
+$var reg 32 J regdata1_in [31:0] $end
+$var reg 32 K regdata2_in [31:0] $end
+$var reg 1 L regwrite_in $end
+$var reg 1 M reset $end
+$var reg 5 N rs1_in [4:0] $end
+$var reg 5 O rs2_in [4:0] $end
+$var reg 32 P write_data_in [31:0] $end
+$scope module exmem $end
+$var wire 32 Q alu_result_in [31:0] $end
+$var wire 1 ? clk $end
+$var wire 1 E memread_in $end
+$var wire 1 F memtoreg_in $end
+$var wire 1 G memwrite_in $end
+$var wire 5 R rd_in [4:0] $end
+$var wire 1 L regwrite_in $end
+$var wire 1 M reset $end
+$var wire 32 S write_data_in [31:0] $end
+$var reg 32 T alu_result_out [31:0] $end
+$var reg 1 : memread_out $end
+$var reg 1 9 memtoreg_out $end
+$var reg 1 8 memwrite_out $end
+$var reg 5 U rd_out [4:0] $end
+$var reg 1 6 regwrite_out $end
+$var reg 32 V write_data_out [31:0] $end
+$upscope $end
+$scope module idex $end
+$var wire 4 W alucontrol_in [3:0] $end
+$var wire 1 > alusrc_in $end
+$var wire 1 ? clk $end
+$var wire 1 @ flush $end
+$var wire 32 X imm_in [31:0] $end
+$var wire 1 E memread_in $end
+$var wire 1 F memtoreg_in $end
+$var wire 1 G memwrite_in $end
+$var wire 32 Y pc_in [31:0] $end
+$var wire 5 Z rd_in [4:0] $end
+$var wire 32 [ regdata1_in [31:0] $end
+$var wire 32 \ regdata2_in [31:0] $end
+$var wire 1 L regwrite_in $end
+$var wire 1 M reset $end
+$var wire 5 ] rs1_in [4:0] $end
+$var wire 5 ^ rs2_in [4:0] $end
+$var reg 4 _ alucontrol_out [3:0] $end
+$var reg 1 3 alusrc_out $end
+$var reg 32 ` imm_out [31:0] $end
+$var reg 1 1 memread_out $end
+$var reg 1 0 memtoreg_out $end
+$var reg 1 / memwrite_out $end
+$var reg 32 a pc_out [31:0] $end
+$var reg 5 b rd_out [4:0] $end
+$var reg 32 c regdata1_out [31:0] $end
+$var reg 32 d regdata2_out [31:0] $end
+$var reg 1 * regwrite_out $end
+$var reg 5 e rs1_out [4:0] $end
+$var reg 5 f rs2_out [4:0] $end
+$upscope $end
+$scope module ifid $end
+$var wire 1 ? clk $end
+$var wire 1 A enable $end
+$var wire 32 g instr_in [31:0] $end
+$var wire 32 h pc_in [31:0] $end
+$var wire 1 M reset $end
+$var reg 32 i instr_out [31:0] $end
+$var reg 32 j pc_out [31:0] $end
+$upscope $end
+$scope module memwb $end
+$var wire 32 k alu_result_in [31:0] $end
+$var wire 1 ? clk $end
+$var wire 32 l mem_data_in [31:0] $end
+$var wire 1 F memtoreg_in $end
+$var wire 5 m rd_in [4:0] $end
+$var wire 1 L regwrite_in $end
+$var wire 1 M reset $end
+$var reg 32 n alu_result_out [31:0] $end
+$var reg 32 o mem_data_out [31:0] $end
+$var reg 1 # memtoreg_out $end
+$var reg 5 p rd_out [4:0] $end
+$var reg 1 ! regwrite_out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx p
+bx o
+bx n
+b11 m
+b1000010 l
+b101100 k
+bx j
+bx i
+b100000000 h
+b10010001101000101011001111000 g
+bx f
+bx e
+bx d
+bx c
+bx b
+bx a
+bx `
+bx _
+b10 ^
+b1 ]
+b10110 \
+b1011 [
+b11 Z
+b100000000 Y
+b100001 X
+b0 W
+bx V
+bx U
+bx T
+b110111 S
+b11 R
+b101100 Q
+b110111 P
+b10 O
+b1 N
+1M
+1L
+b10110 K
+b1011 J
+b11 I
+b100000000 H
+0G
+1F
+1E
+b1000010 D
+b10010001101000101011001111000 C
+b100001 B
+1A
+0@
+0?
+1>
+b0 =
+b101100 <
+bx ;
+x:
+x9
+x8
+bx 7
+x6
+bx 5
+bx 4
+x3
+bx 2
+x1
+x0
+x/
+bx .
+bx -
+bx ,
+bx +
+x*
+bx )
+bx (
+bx '
+bx &
+bx %
+bx $
+x#
+bx "
+x!
+$end
+#5000
+b0 '
+b0 i
+b0 &
+b0 j
+b0 -
+b0 b
+b0 (
+b0 f
+b0 )
+b0 e
+b0 2
+b0 `
+b0 +
+b0 d
+b0 ,
+b0 c
+b0 .
+b0 a
+b0 4
+b0 _
+03
+00
+0/
+01
+0*
+b0 7
+b0 U
+b0 5
+b0 V
+b0 ;
+b0 T
+09
+08
+0:
+06
+b0 "
+b0 p
+b0 $
+b0 o
+b0 %
+b0 n
+0#
+0!
+1?
+#6000
+0M
+#10000
+0?
+#15000
+b11 "
+b11 p
+b1000010 $
+b1000010 o
+b101100 %
+b101100 n
+1#
+1!
+b11 7
+b11 U
+b110111 5
+b110111 V
+b101100 ;
+b101100 T
+19
+1:
+16
+b11 -
+b11 b
+b10 (
+b10 f
+b1 )
+b1 e
+b100001 2
+b100001 `
+b10110 +
+b10110 d
+b1011 ,
+b1011 c
+b100000000 .
+b100000000 a
+13
+10
+11
+1*
+b10010001101000101011001111000 '
+b10010001101000101011001111000 i
+b100000000 &
+b100000000 j
+1?
+#16000
+b10000111011001010100001100100001 C
+b10000111011001010100001100100001 g
+b1000000000 H
+b1000000000 Y
+b1000000000 h
+0A
+#20000
+0?
+#25000
+b1000000000 .
+b1000000000 a
+1?
+#26000
+1@
+#30000
+0?
+#35000
+b0 -
+b0 b
+b0 (
+b0 f
+b0 )
+b0 e
+b0 2
+b0 `
+b0 +
+b0 d
+b0 ,
+b0 c
+b0 .
+b0 a
+03
+00
+01
+0*
+1?
+#36000
