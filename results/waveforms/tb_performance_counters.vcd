@@ -1,0 +1,121 @@
+$date
+	Wed Nov 11 12:30:31 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_performance_counters $end
+$var wire 32 ! stall_cycles [31:0] $end
+$var wire 32 " retired_instructions [31:0] $end
+$var wire 32 # forwarding_events [31:0] $end
+$var wire 32 $ cycles [31:0] $end
+$var reg 1 % clk $end
+$var reg 1 & forwarding_event $end
+$var reg 1 ' reset $end
+$var reg 1 ( retired $end
+$var reg 1 ) stall $end
+$scope module dut $end
+$var wire 1 % clk $end
+$var wire 1 & forwarding_event $end
+$var wire 1 ' reset $end
+$var wire 1 ( retired $end
+$var wire 1 ) stall $end
+$var reg 32 * cycles [31:0] $end
+$var reg 32 + forwarding_events [31:0] $end
+$var reg 32 , retired_instructions [31:0] $end
+$var reg 32 - stall_cycles [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx -
+bx ,
+bx +
+bx *
+0)
+0(
+1'
+0&
+0%
+bx $
+bx #
+bx "
+bx !
+$end
+#5000
+b0 #
+b0 +
+b0 !
+b0 -
+b0 "
+b0 ,
+b0 $
+b0 *
+1%
+#6000
+0'
+#10000
+1(
+0%
+#15000
+b1 "
+b1 ,
+b1 $
+b1 *
+1%
+#20000
+1)
+0(
+0%
+#25000
+b1 !
+b1 -
+b10 $
+b10 *
+1%
+#30000
+1&
+1(
+0)
+0%
+#35000
+b1 #
+b1 +
+b10 "
+b10 ,
+b11 $
+b11 *
+1%
+#40000
+0&
+0%
+#45000
+b11 "
+b11 ,
+b100 $
+b100 *
+1%
+#50000
+0(
+0%
+#55000
+b101 $
+b101 *
+1%
+#60000
+1(
+0%
+#65000
+b100 "
+b100 ,
+b110 $
+b110 *
+1%
+#66000
