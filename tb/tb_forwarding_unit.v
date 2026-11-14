@@ -1,17 +1,12 @@
 `timescale 1ns/1ps
-
 module tb_forwarding_unit;
-
 reg [4:0] rs1, rs2, exrd, wbrd;
 reg exwe, wbwe;
 wire [1:0] fa, fb;
-
 forwarding_unit dut(
     rs1, rs2, exrd, exwe, wbrd, wbwe, fa, fb
 );
-
 initial begin
-
     $dumpfile("results/waveforms/tb_forwarding_unit.vcd");
     $dumpvars(0, tb_forwarding_unit);
 
@@ -62,7 +57,5 @@ initial begin
 
     $display("PASS: All 7 forwarding unit tests");
     $finish;
-
 end
-
 endmodule
