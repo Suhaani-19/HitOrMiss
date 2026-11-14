@@ -12,41 +12,55 @@ forwarding_unit dut(
 
 initial begin
 
-    // Generate waveform
     $dumpfile("results/waveforms/tb_forwarding_unit.vcd");
     $dumpvars(0, tb_forwarding_unit);
 
-    // Test 1: EX/MEM forwarding for rs1,
-    // MEM/WB forwarding for rs2
-    rs1 = 5;
-    rs2 = 6;
-    exrd = 5;
-    exwe = 1;
-    wbrd = 6;
-    wbwe = 1;
-    #5;
+    // Test 1: Simultaneous forwarding
+    rs1=5; rs2=6; exrd=5; wbrd=6;
+    exwe=1; wbwe=1; #5;
+    if (fa!==2'b10 || fb!==2'b01)
+        $fatal(1,"Simultaneous forwarding failed");
+    $display("PASS 1: Simultaneous forwarding");
 
-    if (fa !== 2'b10 || fb !== 2'b01)
-        $fatal(1, "Forwarding selection failed");
+    // Test 2: EX/MEM priority for rs2
+    exrd=6; wbrd=6; #5;
+    if (fa!==2'b00 || fb!==2'b10)
+        $fatal(1,"EX/MEM priority failed");
+    $display("PASS 2: EX/MEM priority for rs2");
 
-    // Test 2: EX/MEM has priority over MEM/WB
-    exrd = 6;
-    wbrd = 6;
-    #5;
+    // Test 3: Ignore register x0
+    rs1=0; rs2=0; exrd=0; wbrd=0; #5;
+    if (fa!==2'b00 || fb!==2'b00)
+        $fatal(1,"x0 must not be forwarded");
+    $display("PASS 3: Register x0 ignored");
 
-    if (fb !== 2'b10)
-        $fatal(1, "EX/MEM priority failed");
+    // Test 4: Write enables disabled
+    rs1=5; rs2=6; exrd=5; wbrd=6;
+    exwe=0; wbwe=0; #5;
+    if (fa!==2'b00 || fb!==2'b00)
+        $fatal(1,"Disabled write enable failed");
+    $display("PASS 4: Write enables disabled");
 
-    // Test 3: Register x0 must never be forwarded
-    exrd = 0;
-    wbrd = 0;
-    #5;
+    // Test 5: No register dependency
+    rs1=1; rs2=2; exrd=3; wbrd=4;
+    exwe=1; wbwe=1; #5;
+    if (fa!==2'b00 || fb!==2'b00)
+        $fatal(1,"No dependency test failed");
+    $display("PASS 5: No register dependency");
 
-    if (fa !== 0 || fb !== 0)
-        $fatal(1, "x0 must not be forwarded");
+    // Test 6: EX/MEM priority for rs1
+    rs1=5; rs2=6; exrd=5; wbrd=5; #5;
+    if (fa!==2'b10 || fb!==2'b00)
+        $fatal(1,"EX/MEM priority for rs1 failed");
+    $display("PASS 6: EX/MEM priority for rs1");
 
-    $display("PASS: forwarding unit");
+    // Test 7: MEM/WB forwarding for rs1
+    exwe=0; wbwe=1; #5;
+    if (fa!==2'b01 || fb!==2'b00)
+        $fatal(1,"MEM/WB forwarding failed");
+    $display("PASS 7: MEM/WB forwarding for rs1");
 
+    $display("PASS: All 7 forwarding unit tests");
     $finish;
 
 end

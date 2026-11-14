@@ -1,0 +1,10 @@
+VCD info: dumpfile results/waveforms/tb_forwarding_unit.vcd opened for output.
+PASS 1: Simultaneous forwarding
+PASS 2: EX/MEM priority for rs2
+PASS 3: Register x0 ignored
+PASS 4: Write enables disabled
+PASS 5: No register dependency
+PASS 6: EX/MEM priority for rs1
+PASS 7: MEM/WB forwarding for rs1
+PASS: All 7 forwarding unit tests
+tb/tb_forwarding_unit.v:64: $finish called at 35000 (1ps)
