@@ -1,0 +1,3 @@
+VCD info: dumpfile results/waveforms/tb_pipeline_registers.vcd opened for output.
+PASS: pipeline registers
+tb/tb_pipeline_registers.v:37: $finish called at 36000 (1ps)

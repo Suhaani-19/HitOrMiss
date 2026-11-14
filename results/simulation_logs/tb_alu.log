@@ -1,0 +1,2 @@
+PASS: ALU
+tb/tb_alu.v:10: $finish called at 8000 (1ps)

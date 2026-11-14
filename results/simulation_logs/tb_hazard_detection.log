@@ -1,0 +1,2 @@
+PASS: hazard detection unit
+tb/tb_hazard_detection.v:11: $finish called at 20000 (1ps)

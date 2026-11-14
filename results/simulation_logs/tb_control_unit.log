@@ -1,0 +1,2 @@
+PASS: control unit
+tb/tb_control_unit.v:13: $finish called at 12000 (1ps)

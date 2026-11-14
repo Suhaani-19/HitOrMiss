@@ -64,4 +64,16 @@ run_test tb_store_load_processor \
   rtl/memory/instruction_memory.v rtl/memory/data_memory.v \
   rtl/performance/performance_counters.v tb/tb_store_load_processor.v
 
-echo "All 12 testbenches passed."
+run_test tb_register_bypass \
+  rtl/pipeline_registers/if_id_register.v \
+  rtl/pipeline_registers/id_ex_register.v \
+  rtl/pipeline_registers/ex_mem_register.v \
+  rtl/pipeline_registers/mem_wb_register.v \
+  rtl/forwarding/forwarding_unit.v \
+  rtl/hazard_detection/hazard_detection_unit.v \
+  rtl/processor/alu.v rtl/processor/register_file.v \
+  rtl/processor/control_unit.v rtl/processor/hazard_processor_top.v \
+  rtl/memory/instruction_memory.v rtl/memory/data_memory.v \
+  rtl/performance/performance_counters.v tb/tb_register_bypass.v
+
+echo "All 13 testbenches passed."

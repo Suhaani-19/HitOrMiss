@@ -1,0 +1,4 @@
+VCD info: dumpfile results/waveforms/tb_performance_counters.vcd opened for output.
+PASS: performance counters
+cycles=6 retired_events=4 stall_cycles=1 forwarding_events=1
+tb/tb_performance_counters.v:24: $finish called at 66000 (1ps)

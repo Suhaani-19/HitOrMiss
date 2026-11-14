@@ -13,6 +13,9 @@ always @(posedge clk) begin
         regs[write_reg] <= write_data;
     end
 end
-assign read_data1 = (read_reg1 == 0) ? 0 : regs[read_reg1];
-assign read_data2 = (read_reg2 == 0) ? 0 : regs[read_reg2];
+
+assign read_data1 = (read_reg1 == 0) ? 0 :
+    (regwrite && write_reg == read_reg1) ? write_data : regs[read_reg1];
+assign read_data2 = (read_reg2 == 0) ? 0 :
+    (regwrite && write_reg == read_reg2) ? write_data : regs[read_reg2];
 endmodule

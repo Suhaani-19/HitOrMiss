@@ -1,0 +1,4 @@
+WARNING: rtl/memory/instruction_memory.v:9: $readmemh(programs/store_load.hex): Not enough words in the file for the requested range [0:255].
+VCD info: dumpfile results/waveforms/tb_store_load_processor.vcd opened for output.
+PASS: integrated store/load
+tb/tb_store_load_processor.v:14: $finish called at 356000 (1ps)

@@ -1,0 +1,3 @@
+WARNING: rtl/memory/instruction_memory.v:9: $readmemh(programs/gap3.hex): Not enough words in the file for the requested range [0:255].
+PASS: register-file write-through (consumer 3 instructions after producer)
+tb/tb_register_bypass.v:14: $finish called at 206000 (1ps)

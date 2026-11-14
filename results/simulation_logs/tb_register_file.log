@@ -1,0 +1,2 @@
+PASS: register file
+tb/tb_register_file.v:14: $finish called at 27000 (1ps)

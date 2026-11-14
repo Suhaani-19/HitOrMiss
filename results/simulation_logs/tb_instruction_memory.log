@@ -1,0 +1,4 @@
+WARNING: rtl/memory/instruction_memory.v:9: $readmemh(programs/mixed_dependencies.hex): Not enough words in the file for the requested range [0:255].
+VCD info: dumpfile results/waveforms/tb_instruction_memory.vcd opened for output.
+PASS: instruction memory
+tb/tb_instruction_memory.v:12: $finish called at 10000 (1ps)

@@ -1,0 +1,5 @@
+WARNING: rtl/memory/instruction_memory.v:9: $readmemh(programs/mixed_dependencies.hex): Not enough words in the file for the requested range [0:255].
+VCD info: dumpfile results/waveforms/tb_processor.vcd opened for output.
+PASS: processor integration
+cycles=35 retired=31 stalls=0 forwarding_events=3
+tb/tb_processor.v:25: $finish called at 356000 (1ps)
