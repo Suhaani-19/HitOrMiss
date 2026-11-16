@@ -375,6 +375,9 @@ HitOrMiss/
 ├── programs/
 │   └── Hex instruction programs
 │
+├── report/
+│   └── IEEE report
+│
 ├── results/
 │   ├── VCD waveforms
 │   ├── Simulation logs
