@@ -307,5 +307,7 @@ All members contributed to design reviews, simulation runs, waveform analysis an
 ---
 
 **Repository:** https://github.com/Suhaani-19/HitOrMiss
+
 **Project:** Pipeline Hazard Detection and Forwarding Unit for a Five-Stage RISC-V Processor
+
 **Team:** Hit or Miss | Newton School of Technology, Rishihood University
